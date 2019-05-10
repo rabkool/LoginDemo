@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.java.mapper.GoodMapper" >
+  <resultMap id="BaseResultMap" type="cn.java.entity.Good" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="good_name" property="goodName" jdbcType="VARCHAR" />
+    <result column="good_price" property="goodPrice" jdbcType="REAL" />
+    <result column="good_phone" property="goodPhone" jdbcType="VARCHAR" />
+    <result column="good_address" property="goodAddress" jdbcType="VARCHAR" />
+    <result column="good_num" property="goodNum" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, good_name, good_price, good_phone, good_address, good_num
+  </sql>
+  
+  <!-- 查询所有 -->
+  <select id="selectAllGoods" resultMap="BaseResultMap">
+  	SELECT <include refid="Base_Column_List"/> FROM springboot.goods
+  </select>
+  
+</mapper>
