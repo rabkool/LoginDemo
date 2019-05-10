@@ -14,6 +14,22 @@
 	<script type="text/javascript" src="<%=basePath %>resources/js/dataTable/jquery.dataTables.min.js"></script>
 </head>
 <body>
+
+	<center>
+		<form action="<%=basePath %>/deleteUser" method="post">
+			<table border="1px" width="290px">
+				<tr>   
+					<td>id号：</td>
+					<td><input type="text" name="id" style="width:220px; height:28px" placeholder=""></td>
+				</tr>
+					<td><input type="submit" vlaue="注册" 		></td>
+				
+				</tr>
+			</table>
+		</form>
+	</center>
+
+
 	<table border="1px" width="100%" class="tablelist" id="example">
 		<thead>
 			<tr>
@@ -26,7 +42,7 @@
 			</tr>
 		</thead>
 		<tbody>
-			<c:forEach items="${requestScope.goodlist }" var="entry">
+			<c:forEach items="${requestScope.userlist }" var="entry">
 				<tr>
 					<td>${pageScope.entry.user_id }</td>
 					<td>${pageScope.entry.user_nick }</td>

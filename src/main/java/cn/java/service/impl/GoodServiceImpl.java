@@ -76,8 +76,8 @@ public class GoodServiceImpl implements GoodService {
     }
     
     @Override
-    public boolean removeUser(Long id) {
-    	return goodMapper.delUser(id)>=1? true : false;
+    public int removeUser(Long id) {
+    	return goodMapper.delUser(id);
     }
 
 

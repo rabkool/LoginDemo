@@ -57,8 +57,8 @@ public class GoodController {
 	@RequestMapping("/AllUser")
 	public String getUser(HttpServletRequest request) {
 
-		List<Map<String, Object>> goodlist = goodService.selectAllUsers();
-		request.setAttribute("goodlist", goodlist);
+		List<Map<String, Object>> userlist = goodService.selectAllUsers();
+		request.setAttribute("userlist", userlist);
 		return "admin/listUser.jsp";
 	}
 
@@ -77,6 +77,7 @@ public class GoodController {
 	@RequestMapping("/deleteGood")
 	@ResponseBody
 	public boolean deleteGood(Long id) {
+		
 		return goodService.removeGood(id);
 	}
 
@@ -84,9 +85,12 @@ public class GoodController {
 	 * 按id删除user表里信息
 	 */
 	@RequestMapping("/deleteUser")
-	@ResponseBody
-	public boolean deleteUser(Long id) {
-		return goodService.removeUser(id);
+	
+	public String deleteUser(Long id,HttpServletRequest request) {
+		goodService.removeUser(id);
+		List<Map<String, Object>> userlist = goodService.selectAllUsers();
+		request.setAttribute("userlist", userlist);
+		return "admin/listUser.jsp";
 	}
 
 	/**

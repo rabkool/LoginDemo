@@ -63,7 +63,7 @@ public interface GoodService {
      */
     boolean removeGood(Long id);
     
-    boolean removeUser(Long id);
+    int removeUser(Long id);
 
 //	List<Map<String, Object>> selectAllUsers();
    
