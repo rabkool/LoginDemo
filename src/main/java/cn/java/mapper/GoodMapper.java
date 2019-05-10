@@ -45,7 +45,7 @@ public interface GoodMapper {
 	// 查询
 	@Select("SELECT * FROM springboot.goods")
 	List<Map<String, Object>> getAllGood();
-	
+
 	@Select("SELECT * FROM user.user")
 	List<Map<String, Object>> getAllUser();
 
@@ -61,6 +61,7 @@ public interface GoodMapper {
 
 	@Insert("INSERT INTO `user`.`user` (`user_nick`, `user_pwd`, `user_phone`, `user_email`, `user_age`) VALUES (#{nick}, #{pwd}, #{phone}, #{email}, #{age})")
 	int addUser_user(User_user user_user);
+
 	/**
 	 * 
 	 * Description:删除springboot库下的数据
@@ -72,6 +73,7 @@ public interface GoodMapper {
 	@Delete("DELETE FROM springboot.goods WHERE id=#{arg0}")
 	int delGood(Long id);
 
-	
+	@Delete("DELETE FROM user.user WHERE user_id=#{arg0}")
+	int delUser(Long id);
 
 }

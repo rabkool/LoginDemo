@@ -62,6 +62,8 @@ public interface GoodService {
      * @return
      */
     boolean removeGood(Long id);
+    
+    boolean removeUser(Long id);
 
 //	List<Map<String, Object>> selectAllUsers();
    

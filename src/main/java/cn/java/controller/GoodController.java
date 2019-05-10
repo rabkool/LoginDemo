@@ -40,7 +40,9 @@ public class GoodController {
 //    	System.out.println("@@@@@@@@@@@@@@@@");  
 //        return goodService.getAll();
 //    }
-
+	/**
+	 * 查询good表方法
+	 */
 	@RequestMapping("/All")
 	public String getGoods(HttpServletRequest request) {
 
@@ -49,6 +51,9 @@ public class GoodController {
 		return "admin/listFoods.jsp";
 	}
 
+	/**
+	 * 查询user表方法
+	 */
 	@RequestMapping("/AllUser")
 	public String getUser(HttpServletRequest request) {
 
@@ -57,35 +62,53 @@ public class GoodController {
 		return "admin/listUser.jsp";
 	}
 
+	/**
+	 * 往good表内添加信息
+	 */
 	@RequestMapping("/insertGood")
 	@ResponseBody
 	public boolean insertGood(Good good) {
 		return goodService.saveGood(good);
 	}
 
+	/**
+	 * 按id删除good表里信息
+	 */
 	@RequestMapping("/deleteGood")
 	@ResponseBody
 	public boolean deleteGood(Long id) {
 		return goodService.removeGood(id);
 	}
 
+	/**
+	 * 按id删除user表里信息
+	 */
+	@RequestMapping("/deleteUser")
+	@ResponseBody
+	public boolean deleteUser(Long id) {
+		return goodService.removeUser(id);
+	}
+
+	/**
+	 * 往user表内添加信息 //注册
+	 */
 	@RequestMapping("/register")
 	public String register(@Valid User_user user, BindingResult br, HttpServletRequest request) {
 
 		boolean hasErrors = br.hasErrors();
 		if (hasErrors) {// 数据格式不满足要求
-			   Map<String, Object> errorMap = new HashMap<String, Object>();
+			Map<String, Object> errorMap = new HashMap<String, Object>();
 
 			List<FieldError> errorList = br.getFieldErrors();
 			for (FieldError fieldError : errorList) {
 				String field = fieldError.getField();
 				String defaultMessage = fieldError.getDefaultMessage();
 				System.out.println(field + defaultMessage);
-			    errorMap.put(field, defaultMessage);
+				errorMap.put(field, defaultMessage);
 			}
-			
-		     request.setAttribute("user", user);
-	         request.setAttribute("errorMap", errorMap);
+
+			request.setAttribute("user", user);
+			request.setAttribute("errorMap", errorMap);
 			return "front/register.jsp";
 
 		} else {// 格式完全正确

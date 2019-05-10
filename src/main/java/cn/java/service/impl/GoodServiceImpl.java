@@ -37,7 +37,24 @@ public class GoodServiceImpl implements GoodService {
 //    public List<Good> getAll() {
 //        return goodMapper.selectAllGoods();
 //    }
+    /**
+     * 查询
+     */
+	@Override
+	public List<Map<String, Object>> selectAllGoods() {
+		
+		return goodMapper.getAllGood();
+	}
+	
+
+	@Override
+	public List<Map<String, Object>> selectAllUsers() {
+		return goodMapper.getAllUser();
+	}
     
+    /**
+     * 添加
+     */
     @Override
     public  boolean saveGood(Good good) {
     	return goodMapper.addGood(good) >= 1 ? true:false;
@@ -50,24 +67,19 @@ public class GoodServiceImpl implements GoodService {
     }
     
     
-  
+    /**
+     * 删除
+     */
     @Override
     public boolean removeGood(Long id) {
     	return goodMapper.delGood(id)>=1? true : false;
     }
-
-	@Override
-	public List<Map<String, Object>> selectAllGoods() {
-		
-		return goodMapper.getAllGood();
-	}
-	
-	
+    
+    @Override
+    public boolean removeUser(Long id) {
+    	return goodMapper.delUser(id)>=1? true : false;
+    }
 
 
-	@Override
-	public List<Map<String, Object>> selectAllUsers() {
-		return goodMapper.getAllUser();
-	}
 }
 
