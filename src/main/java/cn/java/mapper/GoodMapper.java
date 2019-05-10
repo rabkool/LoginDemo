@@ -45,6 +45,9 @@ public interface GoodMapper {
 	// 查询
 	@Select("SELECT * FROM springboot.goods")
 	List<Map<String, Object>> getAllGood();
+	
+	@Select("SELECT * FROM user.user")
+	List<Map<String, Object>> getAllUser();
 
 	/**
 	 * 

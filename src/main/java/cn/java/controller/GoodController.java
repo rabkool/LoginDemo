@@ -1,5 +1,6 @@
 package cn.java.controller;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -48,6 +49,14 @@ public class GoodController {
 		return "admin/listFoods.jsp";
 	}
 
+	@RequestMapping("/AllUser")
+	public String getUser(HttpServletRequest request) {
+
+		List<Map<String, Object>> goodlist = goodService.selectAllUsers();
+		request.setAttribute("goodlist", goodlist);
+		return "admin/listUser.jsp";
+	}
+
 	@RequestMapping("/insertGood")
 	@ResponseBody
 	public boolean insertGood(Good good) {
@@ -60,25 +69,31 @@ public class GoodController {
 		return goodService.removeGood(id);
 	}
 
-	@RequestMapping("/registerQQ")
-	public String registerQQ(@Valid User_user user, BindingResult br) {
+	@RequestMapping("/register")
+	public String register(@Valid User_user user, BindingResult br, HttpServletRequest request) {
 
-		 boolean hasErrors = br.hasErrors();
-	        if (hasErrors) {// 数据格式不满足要求
-	      
-	            List<FieldError> errorList = br.getFieldErrors();
-	            for (FieldError fieldError : errorList) {
-	                String field = fieldError.getField();
-	                String defaultMessage = fieldError.getDefaultMessage();
-	                System.out.println(field + defaultMessage);
-	            }
-	   
-	        } else {// 格式完全正确
-	            System.out.println("亲，格式正确，可以调用业务层方法了");
-	        	goodService.saveUser(user);
-	        }
-  
-		return "front/registerQQ.jsp";
+		boolean hasErrors = br.hasErrors();
+		if (hasErrors) {// 数据格式不满足要求
+			   Map<String, Object> errorMap = new HashMap<String, Object>();
+
+			List<FieldError> errorList = br.getFieldErrors();
+			for (FieldError fieldError : errorList) {
+				String field = fieldError.getField();
+				String defaultMessage = fieldError.getDefaultMessage();
+				System.out.println(field + defaultMessage);
+			    errorMap.put(field, defaultMessage);
+			}
+			
+		     request.setAttribute("user", user);
+	         request.setAttribute("errorMap", errorMap);
+			return "front/register.jsp";
+
+		} else {// 格式完全正确
+			System.out.println("格式正确已插入数据库");
+			goodService.saveUser(user);
+			return "front/hello.jsp";
+		}
+
 	}
 
 //	@RequestMapping("/register")

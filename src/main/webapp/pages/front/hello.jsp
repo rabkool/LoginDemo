@@ -15,10 +15,10 @@
 <body>
 
 	<center>
-		<h6>hello</h6></br>
-		<h1>会不会输入</h1>
 		
-		  <li class="dao"><a href="http://localhost:8080//registerQQ"><h1>返回注册</h1></a></li>
+		<h1>注册成功</h1>
+		
+		  <li class="dao"><a href="http://localhost:8080//register"><h1>返回注册</h1></a></li>
 	</center>
 
 </body>

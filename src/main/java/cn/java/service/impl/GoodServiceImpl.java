@@ -1,16 +1,7 @@
-/**
- * Project Name:dingpeng_springboot2
- * File Name:GoodServiceImpl.java
- * Package Name:cn.java.service.impl
- * Date:上午11:24:19
- * Copyright (c) 2018, bluemobi All Rights Reserved.
- *
-*/
 
 package cn.java.service.impl;
 /**
  * Description:	   <br/>
- * Date:     上午11:24:19 <br/>
  * @author   Yin
  * @version  
  * @see 	 
@@ -69,6 +60,14 @@ public class GoodServiceImpl implements GoodService {
 	public List<Map<String, Object>> selectAllGoods() {
 		
 		return goodMapper.getAllGood();
+	}
+	
+	
+
+
+	@Override
+	public List<Map<String, Object>> selectAllUsers() {
+		return goodMapper.getAllUser();
 	}
 }
 

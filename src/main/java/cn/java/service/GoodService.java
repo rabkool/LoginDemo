@@ -12,7 +12,7 @@ package cn.java.service;
 import java.util.List;
 import java.util.Map;
 
-import org.apache.ibatis.annotations.Delete;
+
 
 import cn.java.entity.Good;
 import cn.java.entity.User_user;
@@ -39,6 +39,8 @@ public interface GoodService {
      */
     List<Map<String, Object>> selectAllGoods();
     
+    List<Map<String, Object>> selectAllUsers();	  
+    
     /**
      * 
      * Description: 添加商品
@@ -60,6 +62,8 @@ public interface GoodService {
      * @return
      */
     boolean removeGood(Long id);
+
+//	List<Map<String, Object>> selectAllUsers();
    
 
 }

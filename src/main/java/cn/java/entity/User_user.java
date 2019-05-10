@@ -8,19 +8,23 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 
 public class User_user {
-
-	@Pattern(regexp = "[\\u4E00-\\u9FA5||\\u30a1-\\u30f6||\\u3041-\\u3093]{2,6}", message = "名字输入格式错误")
+	@NotNull(message = "输入格式错误名字不能为空")
+	@Pattern(regexp = "[\\u4E00-\\u9FA5||\\u30a1-\\u30f6||\\u3041-\\u3093]{2,6}", message = "输入格式错误请正确输入名字")
 	private String nick;
-
+	
+	@NotNull(message = "输入格式错误密码不能为空")
 	@Pattern(regexp = "[0-9a-zA-Z]{8,16}", message = "密码输入格式错误请输入8-16位")
 	private String pwd;
 
+	@NotNull(message = "输入格式错误名字不能为空")
 	@Pattern(regexp = "[0-9]{11,11}", message = "手机输入格式错误")
 	private String phone;
 
+	@NotNull(message = "输入格式错误邮箱不能为空")
 	@Email(message = "邮箱输入格式错误")
 	private String email;
 
+	@NotNull(message = "输入格式错误年龄不能为空")
 	@Max(value = 150, message = "请正确输入年龄")
 	@Min(value = 1, message = "请正确输入年龄")
 	private Integer age;
