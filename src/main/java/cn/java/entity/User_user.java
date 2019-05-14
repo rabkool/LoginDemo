@@ -10,6 +10,10 @@ public class User_user {
 	/**
 	 * id编号
 	 */
+
+	@Max(value = 9999999, message = "请正确输入年龄")
+	@Min(value = 1, message = "请正确输入年龄")
+	
 	private Long id;
 
 	/**
@@ -98,7 +102,12 @@ public class User_user {
 
 	@Override
 	public String toString() {
-		return "User [nick=" + nick + ", pwd=" + pwd + ", phone=" + phone + ", email=" + email + ", age=" + age + "]";
+		System.out.println("123123123");
+		return "User_user [id=" + id + ", nick=" + nick + ", pwd=" + pwd + ", phone=" + phone + ", email=" + email
+				+ ", age=" + age + "]";
 	}
+
+
+	
 
 }

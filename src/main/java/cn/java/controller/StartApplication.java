@@ -16,7 +16,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @EnableAutoConfiguration
 // 配置mapper层的扫描
 @MapperScan(basePackages = { "cn.java.mapper" })
-public class StartApplication {
+public class StartApplication {	
     public static void main(String[] args) {  
         SpringApplication.run(StartApplication.class, args);
     }

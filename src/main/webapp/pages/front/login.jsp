@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" isELIgnored="false"%>
+<%-- <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" isELIgnored="false"%>
 <%
     String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort() +request.getContextPath()+"/";
 %>
@@ -7,19 +7,20 @@
 <head>
 	<base href="<%=basePath %>">
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>注册</title>
+	<title>登录</title>
 	<style>
-		tr>td:first-child {
-			width:50px;
-			height:28px;
-		}
+	
 	</style>
 </head>
 <body>
 
 	<center>
-		<form action="<%=basePath %>/register" method="post">
+		<form action="<%=basePath %>/upId" method="post">
 			<table border="1px" width="290px">
+			<tr>   
+					<td>id：</td>
+					<td><input type="text" name="id" style="width:220px; height:28px" value="${errorMap.id==null?user.id:'' }" placeholder=${errorMap.id==null?"":errorMap.id }></td>
+				</tr>
 				<tr>   
 					<td>名字：</td>
 					<td><input type="text" name="nick" style="width:220px; height:28px" value="${errorMap.nick==null?user.nick:'' }" placeholder=${errorMap.nick==null?"":errorMap.nick }></td>
@@ -41,12 +42,13 @@
 					<td><input type="text" name="age"style="width:220px; height:28px" value="${errorMap.age==null?user.age:'' }"  placeholder=${errorMap.age==null?"":errorMap.age }></td>
 				</tr>
 				<tr>
-					<td><input type="submit" value="注册"></td>
+					<td><input type="submit" value="修改"></td>
 					<td><input type="reset" value="重置"></td>
 				</tr>
 			</table>
 		</form>
 	</center>
 
+
 </body>
-</html>
+</html> --%>

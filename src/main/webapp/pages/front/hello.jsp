@@ -7,7 +7,7 @@
 <head>
 	<base href="<%=basePath %>">
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>QQ注册</title>
+	<title></title>
 	<style>
 	
 	</style>
@@ -18,8 +18,9 @@
 		
 		<h1>注册成功</h1>
 		
-		  <li class="dao"><a href="http://localhost:8080//register"><h1>返回注册</h1></a></li>
-	</center>
+		  <li class="dao"><a href="http://localhost:8080//register"><h1>返回注册</h1></a></li>  
+		  <li class="dao"><a href="http://localhost:8080//AllUser"><h1>查看</h1></a></li>
+	</center> 
 
 </body>
 </html>
