@@ -43,6 +43,8 @@ public interface GoodService {
     //查询user表下
     List<Map<String, Object>> selectAllUsers();	  
     
+    //
+    List<Map<String, Object>> selectpswUsers(Long id);		
     
     //id查询
     int findById(Long id);

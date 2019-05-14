@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -60,6 +61,18 @@ public class GoodController {
 		request.setAttribute("userlist", userlist);
 		return "admin/listUser.jsp";
 	}
+	
+	/**
+	 * 查询user表按id查询密码
+	 */
+	@RequestMapping("/User")
+
+	public String getpwsUser(Long id,HttpServletRequest request) {
+		List<Map<String, Object>> userpswlist = goodService.selectpswUsers(id);
+		request.setAttribute("userpswlist", userpswlist);
+		return  "/admin/listUserPsw.jsp";
+	}
+
 
 	/**
 	 * 往good表内添加信息

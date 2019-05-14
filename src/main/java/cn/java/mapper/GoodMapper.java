@@ -53,6 +53,12 @@ public interface GoodMapper {
 	// 按id查询
 	@Select("SELECT * FROM user.user WHERE user_id=#{id}")
 	int findById(Long id);
+	
+	//查询密码
+	@Select("SELECT user_pwd FROM user.user WHERE user_id=#{id}")
+
+	List<Map<String, Object>> getpswUser(Long id);
+	
 
 	/**
 	 * 

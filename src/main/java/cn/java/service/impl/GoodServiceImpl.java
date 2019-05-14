@@ -61,6 +61,14 @@ public class GoodServiceImpl implements GoodService {
     	return goodMapper.findById(id);
     }
 
+    @Override
+    public List<Map<String, Object>> selectpswUsers(Long id) {
+		return goodMapper.getpswUser(id);
+	}
+    
+    
+    
+
     
     /**
      * 添加
@@ -98,5 +106,7 @@ public class GoodServiceImpl implements GoodService {
     public int removeUser(Long id) {
     	return goodMapper.delUser(id);
     }
+
+
 }
 
