@@ -62,10 +62,14 @@ public class GoodServiceImpl implements GoodService {
     }
 
     @Override
-    public List<Map<String, Object>> selectpswUsers(Long id) {
-		return goodMapper.getpswUser(id);
+    public List<Map<String, Object>> selectpwdUsers(Long id) {
+		return goodMapper.getpwdUser(id);
 	}
     
+    @Override
+    public List<Map<String, Object>> selectLogin(Long id , String pwd){
+    	return goodMapper.getLogin(id, pwd);
+    }
     
     
 

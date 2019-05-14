@@ -44,7 +44,13 @@ public interface GoodService {
     List<Map<String, Object>> selectAllUsers();	  
     
     //
-    List<Map<String, Object>> selectpswUsers(Long id);		
+    List<Map<String, Object>> selectpwdUsers(Long id);	
+    
+    //login
+    List<Map<String, Object>> selectLogin(Long id , String pwd);	
+    
+    
+    
     
     //id查询
     int findById(Long id);

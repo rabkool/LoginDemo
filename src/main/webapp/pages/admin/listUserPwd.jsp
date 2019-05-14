@@ -17,24 +17,18 @@
 	<table border="1px" width="100%" class="tablelist" id="example">
 		<thead>
 			<tr>
-				<th>id</th>
-				<th>name</th>
+			
 				<th>pwd</th>
-				<th>phone</th>
-				<th>email </th>
-				<th>age</th>
+
 				<th></th>
 			</tr>
 		</thead>
 		<tbody>
-			<c:forEach items="${requestScope.userlist }" var="entry">
+			<c:forEach items="${requestScope.userpswlist }" var="entry">
 				<tr>
-					<td>${pageScope.entry.user_id}</td>
-					<td>${pageScope.entry.user_nick }</td>
+				
 					<td>${pageScope.entry.user_pwd }</td>
-					<td>${pageScope.entry.user_phone }</td>
-					<td>${pageScope.entry.user_email }</td>
-					<td>${pageScope.entry.user_age }</td>
+				
 					<td>
 						 <a href="<%=basePath %>/deleteUser?id=${pageScope.entry.user_id}">
 						 	<input type="submit" value="删除" >
@@ -42,10 +36,6 @@
 	        			
 	        			 <a href="<%=basePath %>/upId?id=${pageScope.entry.user_id}">
 	        				 <input type="submit" value="修改" >
-	        			 </a>
-	        			 
-	        			 	 <a href="<%=basePath %>/User?id=${pageScope.entry.user_id}">
-	        				 <input type="submit" value="查看" >
 	        			 </a>
 					</td>
 				</tr>
@@ -65,27 +55,19 @@
 			</table>
 		</form>
 	</center>
-	
-	<center>
-		<form action="<%=basePath %>/User" method="post">
-			<table border="1px" >
-				<tr>   
-					<td style="width:84px">id号：</td>
-					<td><input type="text" name="id" style="width:220px; height:28px" placeholder="">
-				
-					<td><input type="submit" value="查询 " 		></td>
-				
-				</tr>
-			</table>
-		</form>
-	</center>
 	<center>
 			  <li class="dao"><a href="http://localhost:8080//register"><h1>返回注册</h1></a></li>
 	</center>
 	
 	<center>
-			  <li class="dao"><a href="http://localhost:8080/pages/front/login.jsp"><h1>登入</h1></a></li>
+			  <li class="dao"><a href="http://localhost:8080/pages/admin/listUser.jsp"><h1>返回主页</h1></a></li>
 	</center>
+	
+	
+	
+	
+	
+	
 	
 	
 	<script type="text/javascript">

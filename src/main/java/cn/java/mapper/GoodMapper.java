@@ -57,7 +57,11 @@ public interface GoodMapper {
 	//查询密码
 	@Select("SELECT user_pwd FROM user.user WHERE user_id=#{id}")
 
-	List<Map<String, Object>> getpswUser(Long id);
+	List<Map<String, Object>> getpwdUser(Long id);
+	
+	//登入
+	@Select("SELECT * FROM user.user WHERE (user_id=#{id}) and (user_pwd=#{pwd})")
+	List<Map<String, Object>> getLogin(Long id , String pwd);
 	
 
 	/**

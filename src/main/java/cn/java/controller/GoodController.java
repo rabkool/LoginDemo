@@ -68,9 +68,19 @@ public class GoodController {
 	@RequestMapping("/User")
 
 	public String getpwsUser(Long id,HttpServletRequest request) {
-		List<Map<String, Object>> userpswlist = goodService.selectpswUsers(id);
+		List<Map<String, Object>> userpswlist = goodService.selectpwdUsers(id);
 		request.setAttribute("userpswlist", userpswlist);
-		return  "/admin/listUserPsw.jsp";
+		return  "/admin/listUserPwd.jsp";
+	}
+	
+	
+	
+	@RequestMapping("/login")
+	
+	public String getLogin(long id, String pwd, HttpServletRequest request) {
+		List<Map<String, Object>> LoginList = goodService.selectLogin(id, pwd);
+		request.setAttribute("LoginList", LoginList);
+		return  "admin/listUserLogin.jsp";
 	}
 
 
