@@ -26,6 +26,7 @@
 				<th></th>
 			</tr>
 		</thead>
+		
 		<tbody>
 			<c:forEach items="${requestScope.userlist }" var="entry">
 				<tr>
@@ -36,57 +37,32 @@
 					<td>${pageScope.entry.user_email }</td>
 					<td>${pageScope.entry.user_age }</td>
 					<td>
-						 <a href="<%=basePath %>/deleteUser?id=${pageScope.entry.user_id}">
-						 	<input type="submit" value="删除" >
-						 </a>
+						<input type="button" value="删除" 
+						onclick='location.href=("<%=basePath %>/deleteUser?id=${pageScope.entry.user_id}")'
+						>	        			
+	        		
 	        			
-	        			 <a href="<%=basePath %>/upId?id=${pageScope.entry.user_id}">
-	        				 <input type="submit" value="修改" >
-	        			 </a>
-	        			 
-	        			 	 <a href="<%=basePath %>/User?id=${pageScope.entry.user_id}">
-	        				 <input type="submit" value="查看" >
-	        			 </a>
+	        				<input type="submit" value="修改" 
+	        			onclick='location.href=("<%=basePath %>/upId?id=${pageScope.entry.user_id}&nick=${pageScope.entry.user_nick}&phone=${pageScope.entry.user_phone}&email=${pageScope.entry.user_email}&age=${pageScope.entry.user_age}")'
+	        			>
+	        			
+	        			
+	        		
+	        			<input type="submit" value="查看"
+	        			onclick='location.href=("<%=basePath %>/User?id=${pageScope.entry.user_id}")'
+	        			>	
 					</td>
 				</tr>
 			</c:forEach>	
 		</tbody>
 	</table>
-	<center>
-		<form action="<%=basePath %>/deleteUser" method="post">
-			<table border="1px" >
-				<tr>   
-					<td style="width:84px">id号：</td>
-					<td><input type="text" name="id" style="width:220px; height:28px" placeholder="">
-				
-					<td><input type="submit" value="删除" 		></td>
-				
-				</tr>
-			</table>
-		</form>
-	</center>
 	
 	<center>
-		<form action="<%=basePath %>/User" method="post">
-			<table border="1px" >
-				<tr>   
-					<td style="width:84px">id号：</td>
-					<td><input type="text" name="id" style="width:220px; height:28px" placeholder="">
-				
-					<td><input type="submit" value="查询 " 		></td>
-				
-				</tr>
-			</table>
-		</form>
+			 <a href="http://localhost:8080//register"><h1>返回注册</h1></a>
+			 
+			 <a href="http://localhost:8080/pages/front/login.jsp"><h1>登入</h1></a>
 	</center>
-	<center>
-			  <li class="dao"><a href="http://localhost:8080//register"><h1>返回注册</h1></a></li>
-	</center>
-	
-	<center>
-			  <li class="dao"><a href="http://localhost:8080/pages/front/login.jsp"><h1>登入</h1></a></li>
-	</center>
-	
+
 	
 	<script type="text/javascript">
 		$(document).ready(function(){

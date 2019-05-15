@@ -63,7 +63,7 @@ public interface GoodMapper {
 	@Select("SELECT * FROM user.user WHERE (user_id=#{id}) and (user_pwd=#{pwd})")
 	List<Map<String, Object>> getLogin(Long id , String pwd);
 	
-
+    
 	/**
 	 * 
 	 * Description:添加数据到springboot库下

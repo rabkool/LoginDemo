@@ -30,31 +30,20 @@
 					<td>${pageScope.entry.user_pwd }</td>
 				
 					<td>
-						 <a href="<%=basePath %>/deleteUser?id=${pageScope.entry.user_id}">
-						 	<input type="submit" value="删除" >
-						 </a>
+						<input type="button" value="删除" 
+						onclick='location.href=("<%=basePath %>/deleteUser?id=${pageScope.entry.user_id}")'
+						>	  
+						
+						<input type="button" value="修改" 
+	        			onclick='location.href=("<%=basePath %>/upId?id=${pageScope.entry.user_id}")'>
 	        			
-	        			 <a href="<%=basePath %>/upId?id=${pageScope.entry.user_id}">
-	        				 <input type="submit" value="修改" >
-	        			 </a>
-					</td>
+	        		</td>
 				</tr>
 			</c:forEach>	
 		</tbody>
 	</table>
-	<center>
-		<form action="<%=basePath %>/deleteUser" method="post">
-			<table border="1px" >
-				<tr>   
-					<td style="width:84px">id号：</td>
-					<td><input type="text" name="id" style="width:220px; height:28px" placeholder="">
-				
-					<td><input type="submit" value="删除" 		></td>
-				
-				</tr>
-			</table>
-		</form>
-	</center>
+
+
 	<center>
 			  <li class="dao"><a href="http://localhost:8080//register"><h1>返回注册</h1></a></li>
 	</center>

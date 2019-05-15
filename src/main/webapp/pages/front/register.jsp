@@ -48,7 +48,7 @@
 		</form>
 	</center>  
 		<center>
-			  <li class="dao"><a href="http://localhost:8080/pages/admin/listUser.jsp"><h1>返回主页</h1></a></li>
+			  <li class="dao"><a href="http://localhost:8080/home"><h1>返回主页</h1></a></li>
 	</center>
 
 </body>

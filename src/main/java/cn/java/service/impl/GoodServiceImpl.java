@@ -70,7 +70,7 @@ public class GoodServiceImpl implements GoodService {
     public List<Map<String, Object>> selectLogin(Long id , String pwd){
     	return goodMapper.getLogin(id, pwd);
     }
-    
+       
     
 
     

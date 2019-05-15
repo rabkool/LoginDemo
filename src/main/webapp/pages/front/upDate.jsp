@@ -17,7 +17,7 @@
 			<table border="1px" width="290px">
 			<tr>   
 					<td>id：</td>
-					<td><input type="text" name="id" style="width:220px; height:28px" value="${errorMap.id==null?user.id:'' }" placeholder=${errorMap.id==null?"":errorMap.id }></td>
+					<td><input type="text" name="id" style="width:220px; height:28px" readonly="readonly" value="${errorMap.id==null?user.id:'' }" placeholder=${errorMap.id==null?"":errorMap.id }></td>
 				</tr>
 				<tr>   
 					<td>名字：</td>
@@ -25,7 +25,7 @@
 				</tr>
 				<tr>
 					<td>密码：</td>
-					<td><input type="password" name="pwd" style="width:220px; height:28px" value="${errorMap.pwd==null?user.pwd:'' }" placeholder=${errorMap.pwd==null?"":errorMap.pwd }></td>
+					<td><input type="text" name="pwd" style="width:220px; height:28px" value="${errorMap.pwd==null?user.pwd:'' }" placeholder=${errorMap.pwd==null?"":errorMap.pwd }></td>
 				</tr>
 				<tr>	
 					<td>电话：</td>

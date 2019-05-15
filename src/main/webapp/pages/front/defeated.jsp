@@ -16,9 +16,10 @@
 
 	<center>
 		
-		<h1>注册成功</h1>
+		<h1>密码错误</h1>
 		
-		  	 <a href="http://localhost:8080/pages/front/login.jsp"><h1>登入</h1></a>
+		<a href="http://localhost:8080/pages/front/login.jsp"><h1>重新登入</h1></a>
+		
 	</center> 
 
 </body>

@@ -14,10 +14,10 @@
 	<script type="text/javascript" src="<%=basePath %>resources/js/dataTable/jquery.dataTables.min.js"></script>
 </head>
 <body>
-<table border="1px" width="100%" class="tablelist" id="example">
+		<table border="1px" width="100%" class="tablelist" id="example">
 		<thead>
 			<tr>
-				<th>id</th>
+				
 				<th>name</th>
 				<th>pwd</th>
 				<th>phone</th>
@@ -26,36 +26,37 @@
 				<th></th>
 			</tr>
 		</thead>
+		
 		<tbody>
 			<c:forEach items="${requestScope.LoginList }" var="entry">
 				<tr>
-					<td>${pageScope.entry.user_id}</td>
+				
 					<td>${pageScope.entry.user_nick }</td>
 					<td>${pageScope.entry.user_pwd }</td>
 					<td>${pageScope.entry.user_phone }</td>
 					<td>${pageScope.entry.user_email }</td>
 					<td>${pageScope.entry.user_age }</td>
 					<td>
-						 <a href="<%=basePath %>/deleteUser?id=${pageScope.entry.user_id}">
-						 	<input type="submit" value="删除" >
-						 </a>
-	        			
-	        			 <a href="<%=basePath %>/upId?id=${pageScope.entry.user_id}">
-	        				 <input type="submit" value="修改" >
-	        			 </a>
+						<input type="button" value="删除" 
+						onclick='location.href=("<%=basePath %>/deleteUser?id=${pageScope.entry.user_id}")'
+						>	        			
 	        			 
-	        			 	 <a href="<%=basePath %>/User?id=${pageScope.entry.user_id}">
-	        				 <input type="submit" value="查看" >
-	        			 </a>
+	        			<input type="submit" value="修改" 
+	        			onclick='location.href=("<%=basePath %>/upId?id=${pageScope.entry.user_id}&nick=${pageScope.entry.user_nick}&phone=${pageScope.entry.user_phone}&email=${pageScope.entry.user_email}&age=${pageScope.entry.user_age}")'
+	        			>
+	        		
+	        			<input type="submit" value="查看"
+	        			onclick='location.href=("<%=basePath %>/User?id=${pageScope.entry.user_id}")'
+	        			>	
 					</td>
 				</tr>
 			</c:forEach>	
 		</tbody>
 	</table>
-	
-	
-	
-	
+	<center>
+		<a href="http://localhost:8080/AllUser"><h1>查看全部信息</h1></a>
+		<a href="http://localhost:8080/home"><h1>返回主页</h1></a>
+	</center>
 	
 	<script type="text/javascript">
 		$(document).ready(function(){

@@ -12,8 +12,6 @@ package cn.java.service;
 import java.util.List;
 import java.util.Map;
 
-import org.springframework.transaction.annotation.Transactional;
-
 import cn.java.entity.Good;
 import cn.java.entity.User_user;
 

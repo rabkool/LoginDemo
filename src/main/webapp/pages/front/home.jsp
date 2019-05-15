@@ -15,10 +15,10 @@
 <body>
 
 	<center>
-		
-		<h1>注册成功</h1>
-		
-		  	 <a href="http://localhost:8080/pages/front/login.jsp"><h1>登入</h1></a>
+		  <h1>Hello World</h1>
+	
+		   <input type="button" onclick='location.href=("http://localhost:8080/pages/front/login.jsp")' value="登入">
+		   <input type="button" onclick='location.href=("http://localhost:8080//register")' value="注册">
 	</center> 
 
 </body>

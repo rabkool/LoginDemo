@@ -11,11 +11,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import cn.java.entity.Good;
+import cn.java.entity.Good;   
 import cn.java.entity.User_user;
 
 import cn.java.service.GoodService;
@@ -29,9 +28,19 @@ import cn.java.service.GoodService;
 @Controller
 
 public class GoodController {
+	
+
+	
 	@Autowired
 	private GoodService goodService;
 
+	@RequestMapping("/home")
+	public String Home() {
+		return "/front/home.jsp";
+	}
+	
+	
+	
 //     获取goods表中所有的数据
 //    @RequestMapping("/selectAllGoods.do")
 //    @ResponseBody
@@ -80,7 +89,13 @@ public class GoodController {
 	public String getLogin(long id, String pwd, HttpServletRequest request) {
 		List<Map<String, Object>> LoginList = goodService.selectLogin(id, pwd);
 		request.setAttribute("LoginList", LoginList);
-		return  "admin/listUserLogin.jsp";
+		if(LoginList.size() != 0 ) {
+			return  "admin/listUserLogin.jsp";
+		}
+		
+		System.out.println(LoginList.size());
+		
+		return  "front/defeated.jsp";
 	}
 
 

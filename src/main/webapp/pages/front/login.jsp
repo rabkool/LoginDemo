@@ -29,13 +29,13 @@
 
 				<tr>
 					<td><input type="submit" value="登录"></td>
-					<td><input type="reset" value="重置"></td>
+					<td><input type="button" onclick='location.href=("http://localhost:8080//register")' value="注册"></td>
 				</tr>
 			</table>
 		</form>
 	</center>
 		<center>
-			  <li class="dao"><a href="http://localhost:8080/pages/admin/listUser.jsp"><h1>返回主页</h1></a></li>
+			  <a href="http://localhost:8080/pages/front/home.jsp"><h1>返回主页</h1></a>
 	</center>
 
 
