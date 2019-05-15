@@ -31,9 +31,9 @@
 <link rel="stylesheet" type="text/css" href="<%=basePath %>resources/css/laydate.css">
 <link rel="stylesheet" type="text/css" href="<%=basePath %>resources/css/notify.css">
 
-<script type="text/javascript" src="<%=basePath %>resources/js/Mongo/nicePage1.js"></script>
-<script type="text/javascript" src="<%=basePath %>resources/js/Mongo/layui.js"></script>
-<script type="text/javascript" src="<%=basePath %>resources/js/Mongo/jquery.min.js"></script>
+<script type="text/javascript" src="resources/js/Mongo/nicePage1.js"></script>
+<script type="text/javascript" src="resources/js/Mongo/layui.js"></script>
+<script type="text/javascript" src="resources/js/Mongo/jquery.min.js"></script>
 
 
  	  
@@ -45,18 +45,69 @@
     			style="font-size: 50px; color: white;padding-top:10px"">
     			<b>MONGDB</b>
     		</h1>
-
+    		<%--<ul class="uk-navbar-nav uk-hidden-small">
+    			<li class="uk-active"><a href="index.jsp">mongdb数据查询页面</a></li>
+    		</ul>--%>
     	</div>
     	</nav>
+    <!-- 	<div class="main_content">
+    		<nav class="uk-breader-container">
+    		<div class="uk-container uk-container-center">
+    			<div class="uk-grid">
+    				<div class="uk-width-1-2">
+    					<ul class="uk-breadcrumb ">
+    						<li class="uk-active"><span>mongdb数据查询</span></li>
+    					</ul>
+    				</div>
+    			</div>
+    		</div>
+    		</nav>
+    				
+    			<ul class="uk-tab" id="rule_base_ul"
+    				data-uk-switcher="{connect:'#rule_target_ul'}">
+    				<li class="uk-active"><a href="" id="ss2">数据查询</a></li>
+    			</ul>
+    				<li id="ruleconf_3">
+    					<form style="padding-top: 35px;">
+    						表id: <input id="ruleName" type="text" name="ruleName" value=""
+    							style="width: 150px; height: 25px;">
+    						<div>
+    							<button id="clickbutton" class="uk-button uk-button-primary"
+    								style="margin: -30px; margin-left: 555px;" type="button">查询单个文档</button>
+								<button id="clickbuttonfindall" class="uk-button uk-button-primary"
+										style="margin: -30px; margin-left: 155px;" type="button">查询全部文档</button>
+    						</div>
+    					</form>
+    				</li>
+    			</ul>
+    		</div>
+    	</div> -->
+
+
+  <!--   <div style="width: 90%;height:20%;padding-left: 20px;overflow: auto">
+                <blockquote class="layui-elem-quote">查询数据显示</blockquote>
+                以下为两个必须div元素
+                <div id="table" style="overflow: auto"  style="transform: translate(-600px);"></div>
+                <div id="pageBar"></div>
+        </div> 
 
 
 
 <!--11111111111111-->
-	<div style="margin: 15px ; ">		
-		<form id="addf" class="form-inline layui-form">
-		<fieldset class="layui-elem-field layui-field-title">
+	<div style="margin: 15px ; ">
+	<!-- 	<fieldset class="layui-elem-field layui-field-title"
+				  style="margin-top: 20px;">
+			<legend>添加</legend>
+			
+			
+		</fieldset> -->
+	
 		
-			<legend>
+		<form id="addf" class="form-inline layui-form">
+		<fieldset class="layui-elem-field layui-field-title"
+				  >
+		
+			<legend 	>
 					<h5 >添加
 				<div class="layui-input-inline">
 						<input id="jobIdinput" type="text" class="jobIdinput" lay-verify="required" name="jobIdinput" placeholder="请输入jobId" autocomplete="off"
@@ -164,7 +215,6 @@
 	<%--<table id="tabledata" lay-filter="the_table" ></table>--%>
 <!--1111112222222-->
 </body>
-
 <script type="text/javascript">
 	<!--  11111111    -->
 
