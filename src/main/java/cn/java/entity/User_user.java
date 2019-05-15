@@ -106,8 +106,4 @@ public class User_user {
 		return "User_user [id=" + id + ", nick=" + nick + ", pwd=" + pwd + ", phone=" + phone + ", email=" + email
 				+ ", age=" + age + "]";
 	}
-
-
-	
-
 }
