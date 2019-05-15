@@ -19,12 +19,12 @@
 			<table border="1px" width="290px">
 			<tr>   
 					<td>id：</td>
-					<td><input type="text" name="id" style="width:220px; height:28px" value="${errorMap.id==null?user.id:'' }" placeholder=${errorMap.nick==null?"":errorMap.id }></td>
-				</tr>
+					<td><input type="text" name="id" style="width:220px; height:28px" pattern="^[0-9]\d{0,100}$" required="required" placeholder="请输入工作id"></td>
+				</tr>	
 
 				<tr>
-					<td>密码：</td>
-					<td><input type="password" name="pwd" style="width:220px; height:28px" value="${errorMap.pwd==null?user.pwd:'' }" placeholder=${errorMap.pwd==null?"":errorMap.pwd }></td>
+					<td>密码：</td>	
+					<td><input type="password" name="pwd" style="width:220px; height:28px" required="required" placeholder="请输入密码"></td>
 				</tr>
 
 				<tr>
@@ -36,6 +36,7 @@
 	</center>
 		<center>
 			  <a href="http://localhost:8080/pages/front/home.jsp"><h1>返回主页</h1></a>
+		
 	</center>
 
 

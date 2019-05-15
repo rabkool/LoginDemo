@@ -8,7 +8,7 @@
 <head>
 	<base href="<%=basePath %>">
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>遍历所有数据</title>
+	<title>个人信息</title>
 	<link rel="stylesheet" type="text/css" href="<%=basePath %>resources/js/dataTable/jquery.dataTables.min.css">
 	<script type="text/javascript" src="<%=basePath %>resources/js/dataTable/jquery.js"></script>
 	<script type="text/javascript" src="<%=basePath %>resources/js/dataTable/jquery.dataTables.min.js"></script>

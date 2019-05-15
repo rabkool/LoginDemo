@@ -7,7 +7,7 @@
 <head>
 	<base href="<%=basePath %>">
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title></title>
+	<title>主页</title>
 	<style>
 	
 	</style>
@@ -15,7 +15,7 @@
 <body>
 
 	<center>
-		  <h1>Hello World</h1>
+		  <h1>Hello </h1>
 	
 		   <input type="button" onclick='location.href=("http://localhost:8080/pages/front/login.jsp")' value="登入">
 		   <input type="button" onclick='location.href=("http://localhost:8080//register")' value="注册">

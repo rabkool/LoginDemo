@@ -8,7 +8,7 @@
 <head>
 	<base href="<%=basePath %>">
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>遍历所有数据</title>
+	<title>修改</title>
 	
 </head>
 <body>

@@ -34,12 +34,11 @@ public class GoodController {
 	@Autowired
 	private GoodService goodService;
 
+	
 	@RequestMapping("/home")
 	public String Home() {
 		return "/front/home.jsp";
 	}
-	
-	
 	
 //     获取goods表中所有的数据
 //    @RequestMapping("/selectAllGoods.do")
@@ -83,12 +82,15 @@ public class GoodController {
 	}
 	
 	
-	
+	/**
+	 * 登入 (查询id与密码)
+	 */
 	@RequestMapping("/login")
 	
 	public String getLogin(long id, String pwd, HttpServletRequest request) {
 		List<Map<String, Object>> LoginList = goodService.selectLogin(id, pwd);
 		request.setAttribute("LoginList", LoginList);
+		//判断有没有查询成功
 		if(LoginList.size() != 0 ) {
 			return  "admin/listUserLogin.jsp";
 		}   
