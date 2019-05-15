@@ -54,6 +54,7 @@
 		</tbody>
 	</table>
 	<center>
+		<a href="http://localhost:8080/pages/front/page.jsp"><h1>用户视图管理系统</h1></a>
 		<a href="http://localhost:8080/AllUser"><h1>查看全部信息</h1></a>
 		<a href="http://localhost:8080/home"><h1>返回主页</h1></a>
 	</center>

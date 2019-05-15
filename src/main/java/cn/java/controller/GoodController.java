@@ -91,7 +91,7 @@ public class GoodController {
 		request.setAttribute("LoginList", LoginList);
 		if(LoginList.size() != 0 ) {
 			return  "admin/listUserLogin.jsp";
-		}
+		}   
 		
 		System.out.println(LoginList.size());
 		
